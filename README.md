@@ -4,6 +4,7 @@
 
 ### Estado del código
 [![Build Status](https://travis-ci.org/PabloGuijarroMarco/iwvg-devops-pablo-guijarro.svg?branch=master)](https://travis-ci.org/PabloGuijarroMarco/iwvg-devops-pablo-guijarro)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops-pablo-guijarro&metric=alert_status)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops-pablo-guijarro)
 
 ### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:

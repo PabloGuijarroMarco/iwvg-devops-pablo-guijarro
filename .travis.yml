@@ -11,4 +11,5 @@ notifications:
       - pabloguijarro96@gmail.com
 install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-
+script:
+  - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=pabloguijarromarcopgm -Dsonar.login=$SONAR

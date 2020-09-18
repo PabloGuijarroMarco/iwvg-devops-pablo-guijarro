@@ -1,20 +1,22 @@
 language: java
-#jdk: openjdk14 #problems with sonar-maven-plugin
 branches:
   only:
-    - develop
-    - "/^release-[0-999].[0-999]$/"
-    - master
+  - develop
+  - "/^release-[0-999].[0-999]$/"
+  - master
 notifications:
+  slack:
+    secure: jRnix1vjkQgxyzQABNPCbHkwHKOpVeKTCaYVY1hWLoUYkxgxY5g6PUBy8mgibNszLsl6h5dAhsQGBRvK2ZQn7PvzfEpIXu19eUH0Q8/d7veLRZUxnGrCoMJprRhxB3I8cqpVC9dPXGP2U2JkWIYX2rdmFEGYaQaLyL8lAOJeaqjIk3nG5yvWjnP4iFp1WB7mXurOOaZSKgsVO5FqpuQ00l9Zd9rZWRZOMWtkVrVH01b4q3hEpasST/BfarLfF+pejB05Kua9XSlbKBEsvj/TS0kgT2vCyB0R9GBP0v0rVX/ykJOJANTeNWs3zVtrsVJ9I73PSxb4KTevpfQvsSCSHIpf2XsxP+S/w2FkxfS+DMw/dfDolP+g8HjJpbOjkPOas2pIoXkpPzdEZmPuTKu86VJ0wkXHcbLVe+JueV3FfyXTReMJFjnw9klLcULR0sRqxljzUKuD9mPy4x89G13HxjPh3fh9wmmv81TvHlYemN3VoEeL0PcuRuVb9dKiGaMKqhZipo4w5JCwRB6AZOUyfQejmNSxtFqB/Z6E/cxkXMTzqwLgNYxojQeNScsh9oas8BI1UvSsx+UprgkE8CiAOtudvD5QuBszlFqx7x+zswJftVaq1XonCt7GGKft0m1Yj0J4U4DfJhWlvtLadAc6MUttKDG5coeRlUG3lyq5KXA=
   email:
     recipients:
       - pabloguijarro96@gmail.com
 install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-  - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=pabloguijarromarcopgm -Dsonar.login=$SONAR
+- mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=pabloguijarromarcopgm
+  -Dsonar.login=$SONAR
 deploy:
   provider: heroku
-  api_key: $HEROKU
+  api_key: "$HEROKU"
   on:
     branch: master

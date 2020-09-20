@@ -35,7 +35,7 @@ public class Searches {
                 .map(user -> user.getFractions())
                 .flatMap(fractions -> fractions.stream())
                 .reduce((fraction, fraction2) -> fraction2.add(fraction, fraction2))
-                .get();
+                .orElse(null);
     }
 
     public Stream<String> findUserFamilyNameInitialByAnyProperFraction() {

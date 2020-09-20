@@ -46,4 +46,11 @@ public class Searches {
                 .map(familyNameInitial -> familyNameInitial.substring(0,1));
     }
 
+    public Stream<String> findUserNameByAnyImproperFraction() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(fraction -> fraction.isImproper()))
+                .map(User::getName);
+    }
+
 }

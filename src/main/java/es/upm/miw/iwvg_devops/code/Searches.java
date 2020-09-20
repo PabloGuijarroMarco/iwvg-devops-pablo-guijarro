@@ -53,4 +53,10 @@ public class Searches {
                 .map(User::getName);
     }
 
+    public Stream<String> findUserIdByAllProperFraction() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .allMatch(fraction -> fraction.isProper()))
+                .map(User::getId);
+    }
 }

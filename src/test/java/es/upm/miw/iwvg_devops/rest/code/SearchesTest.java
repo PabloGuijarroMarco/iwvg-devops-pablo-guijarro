@@ -45,4 +45,10 @@ class SearchesTest {
         assertEquals(List.of("F", "B", "L", "B"), new Searches().findUserFamilyNameInitialByAnyProperFraction()
                 .collect(Collectors.toList()));
     }
+
+    @Test
+    void testFindUserNameByAnyImproperFraction() {
+        assertEquals(List.of("Oscar", "Ana", "Oscar", "Antonio", "Paula"), new Searches().findUserNameByAnyImproperFraction()
+                .collect(Collectors.toList()));
+    }
 }

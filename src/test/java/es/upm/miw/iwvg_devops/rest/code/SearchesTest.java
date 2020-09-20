@@ -39,4 +39,10 @@ class SearchesTest {
                         fraction.getNumerator() +
                         ", denominator=" + fraction.getDenominator() + "}");
     }
+
+    @Test
+    void testFindUserFamilyNameInitialByAnyProperFraction() {
+        assertEquals(List.of("F", "B", "L", "B"), new Searches().findUserFamilyNameInitialByAnyProperFraction()
+                .collect(Collectors.toList()));
+    }
 }
